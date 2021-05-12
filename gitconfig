@@ -47,6 +47,10 @@
 
 [branch "master"]
   mergeoptions = --no-edit
+
 [user]
 	email = wirriamm@gmail.com
 	name = William Goh
+
+[pull]
+  rebase = false
