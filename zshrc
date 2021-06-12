@@ -8,7 +8,16 @@ fi
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
+
+SPACESHIP_PROMPT_ADD_NEWLINE="true"
+SPACESHIP_CHAR_SYMBOL="\uf0e7 "
+SPACESHIP_CHAR_PREFIX="\uf296 "
+SPACESHIP_CHAR_SUFFIX=("")
+SPACESHIP_CHAR_COLOR_SUCCESS="yellow"
+SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
+SPACESHIP_USER_SHOW="true"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
 plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv)
@@ -72,9 +81,14 @@ export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 
+# colorls ruby gem
+source $(dirname $(gem which colorls))/tab_complete.sh
+alias cls="colorls"
+alias cll="colorls -l"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/wirriamm/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/wirriamm/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -93,4 +107,8 @@ alias nscc="ssh will0046@ntu.nscc.sg"
 alias workstation="ssh workstation@darwin1809.dynip.ntu.edu.sg"
 alias wallace="ssh will0046@wallace.sbs.ntu.edu.sg"
 alias chuck="ssh william@chucknorris.dynip.ntu.edu.sg"
+
+export NCBI_API_KEY=9588aac8905ff87310b7e1365241b1fa8e08
+
+export PATH=${PATH}:/Users/wirriamm/edirect
 
